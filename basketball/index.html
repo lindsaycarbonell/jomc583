@@ -1,0 +1,67 @@
+<!-- # In Class Exercise
+Tasks:
+- Display the player information in an organized fashion.
+- For each player choose four statistics show.
+- If the player has an image associated with him, display at least one.
+- Allow the user to search for a player by name.
+- Sort the table by player name.
+- Allow the user to toggle the sort and sort in reverse and then back to standard.
+*BONUS*: write functions to show the player's shooting percentage.
+*BONUS*: allow the user to sort by any value you display and toggle it. -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- angular -->
+        <script type="text/javascript" src="js/angular.js"></script>
+
+        <!-- script -->
+        <script type="text/javascript" src="js/app.js"></script>
+
+        <!-- css -->
+        <link rel="stylesheet" href="css/bootstrap.css" />
+
+    </head>
+
+    <body ng-app="myApp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2 col-lg-offset-10 col-xs-2 col-xs-offset-10">
+      <form>
+        <input ng-model="terms" class="form-control" value="search" style="float:right;margin-bottom:10px;"></input>
+      </form>
+    </div>
+    </div>
+    </div>
+        <div class="container" ng-controller="BaseController as base">
+
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <table class="table table-bordered" style="width:100%;">
+                      <thead>
+                        <th ng-click="base.setSort('last')">Name</th>
+                        <th ng-click="base.setSort('position')">Position</th>
+                        <th ng-click="base.setSort('games')">Games</th>
+                        <th ng-click="base.setSort('year')">Year</th>
+                        <th>Image</th>
+                      </thead>
+                      <tr ng-repeat="player in base.player | orderBy:base.sort:base.direction | filter:terms" >
+                        <td>{{player.first + "  " + player.last}}</td>
+                        <td>{{player.position}}</td>
+                        <td>{{player.games}}</td>
+                        <td>{{player.year}}</td>
+                        <td><img ng-src="{{player.images[0]}}" style="height:50%;" /></td>
+                      </tr>
+                    </table>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>
