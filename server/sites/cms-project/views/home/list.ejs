@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    </head>
+    <body>
+
+    <div id="main-container" class="container max-width">
+
+        <div class="row">
+          <div class="col-lg-5 col-sm-5"></div>
+          <div class="col-lg-2 col-sm-2">
+            <img src="logo_fox.png"  style="width:80px;line-height:12pt;"/>
+          </div>
+          <div class="col-lg-5 col-sm-5"></div>
+        </div>
+
+        <h3>Velvet Fox Interiors</h3>
+        <!--https://dribbble.com/shots/1226383-Velvet-Fox-Logo-Concept-->
+
+        <nav class="navbar" style="margin-top:24pt;">
+          <div class="container-fluid">
+              <ul class="nav navbar-nav nav-center">
+                <li class="inline-block"><a href="/">Home</a></li>
+                <li class="inline-block"><a href="#">About</a></li>
+                <li class="inline-block"><a href="#">Our Work</a></li>
+                <li class="inline-block"><a href="#">Shop</a></li>
+              </ul>
+          </div>
+        </nav>
+
+
+
+
+        <% if (posts.length) { %>
+        <!-- <ul> -->
+            <% for (var i in posts) { %>
+            <div class="post-box">
+              <img src="logo_fox.png" style="display:inline-block;"/>
+              <a href="/posts/<%= posts[i]._id %>"><h4 class="meta-title"><%= posts[i].title %></h4></a>
+              <h5 class="meta-author">by <%= posts[i].author %></h5>
+              <p class="meta-excerpt"><%= posts[i].content %></p>
+            </div>
+            <!-- <li><a href="/posts/<%= posts[i].title %>"><%= posts[i].title %></a></li> -->
+            <% } %>
+        <!-- </ul> -->
+        <% } else { %>
+          <div class="row center-push">
+            <div class="col-lg-3 col-sm-3"></div>
+            <div class="col-lg-6 col-sm-6">
+              <p class="medium-p">Oops! We didn't find any posts here.</p>
+              <button class="btn btn-large">Create a post</button>
+              <!-- <p class="medium-p">Would you like to <a href="#">create a post</a>?</p> -->
+            </div>
+            <div class="col-lg-3 col-sm-3"></div>
+            </div>
+        <% } %>
+
+    </div><!--#main-container-->
+    </body>
+</html>

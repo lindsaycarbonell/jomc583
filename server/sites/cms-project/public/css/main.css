@@ -1,0 +1,136 @@
+/*#EDC9A8 : peach
+#FFFEFE : barely off white
+#ECA87B : orange
+#9D836F : brown
+#AAAAAA : gray*/
+
+@font-face {
+    font-family: Timed;
+    src: url('../fonts/timed.ttf');
+}
+@font-face {
+    font-family: pt-sans;
+    src: url('../fonts/PT_Sans-Web-Regular.ttf');
+}
+@font-face {
+    font-family: pt-sans;
+    font-weight: bold;
+    src: url('../fonts/PT_Sans-Web-Bold.ttf');
+}
+@font-face {
+    font-family: pt-sans;
+    font-style: italic;
+    src: url('../fonts/PT_Sans-Web-Italic.ttf');
+}
+/*@font-face {
+    font-family: Euphorigenic;
+    src: url('../fonts/euphorigenic.ttf');
+}
+@font-face {
+    font-family: Oranienbaum;
+    src: url('../fonts/oranienbaum.ttf');
+}*/
+
+body{
+  background-color: #f7e9dc; /*barely peach*/
+  font-family: pt-sans;
+}
+
+#main-container {
+  background-color:#FFFEFE;
+  height: 100vh;
+  padding:24pt;
+}
+
+h3{
+  text-align:center;
+  font-family: Euphorigenic;
+  font-size:48pt;
+  line-height:24pt;
+}
+
+p{
+  font-family:pt-sans;
+  font-size:11pt;
+  line-height:24pt;
+}
+
+.medium-p{
+  font-size:13.5pt;
+}
+
+.btn.btn-large{
+  color:#FFFEFE;
+  font-size:18pt;
+  background-color:#ECA87B;
+}
+
+.max-width{
+  max-width:800px;
+}
+
+.center-push{
+  margin-top:10vw;
+  text-align:center;
+}
+
+.inline-block{
+  display:inline-block!important;
+}
+
+.post-box{
+  width:100%;
+  text-align:center;
+}
+
+.meta-title{
+  font-size:25pt;
+  font-style:bold;
+}
+
+.meta-author{
+  font-size:13pt;
+  font-style:italic;
+}
+
+.meta-excerpt{
+  font-size:11pt;
+}
+
+/*menu*/
+.navbar-nav>li, .navbar-nav{
+  float:none;
+}
+.navbar-nav>li>a{
+  font-size:15pt;
+  color: #000;
+  /*font-weight:bold;*/
+}
+.nav-center{
+  text-align:center;
+  float:none;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+  text-decoration:none;
+  background-color:transparent;
+}
+.nav>li>a::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ECA87B;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav>li>a:hover::before{
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
