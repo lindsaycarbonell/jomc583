@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
-<% include ../templates/header %>
-    <body>
-
+<% include ../templates/header %>    <body>
 
     <div id="main-container" class="container max-width">
 
         <div class="row">
           <div class="col-lg-5 col-sm-5"></div>
           <div class="col-lg-2 col-sm-2">
-            <img src="../logo_fox.png"  style="width:80px;line-height:12pt;"/>
+            <img src="logo_fox.png"  style="width:80px;line-height:12pt;"/>
           </div>
           <div class="col-lg-5 col-sm-5"></div>
         </div>
@@ -28,14 +26,9 @@
           </div>
         </nav>
 
-              <h4 class="inner-title"><%= post.title %></h4>
-              <a class="update-button" href="/edit">Edit this post</a>
-              <span class="slash"> | </span>
-              <a class="delete-button" href="/posts/delete/<%= post._id %>">Delete this post</a>
 
-              <h5 class="meta-author"><%= post.author %></h5>
-              <p class="meta-excerpt"><%= post.content %></p>
-      </div>
 
+
+    </div><!--#main-container-->
     </body>
 </html>

@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="css/main.css" />
-
-    </head>
+  <% include ../templates/header %>
     <body>
 
     <div id="main-container" class="container max-width">
@@ -44,15 +39,26 @@
               <h5 class="meta-author">by <%= posts[i].author %></h5>
               <p class="meta-excerpt"><%= posts[i].content %></p>
             </div>
+
+            <div class="row center-push">
+              <div class="col-lg-3 col-sm-3"></div>
+              <div class="col-lg-6 col-sm-6">
+                <a href="/new"><button class="btn btn-large">Create a post</button></a>
+                <!-- <p class="medium-p">Would you like to <a href="#">create a post</a>?</p> -->
+              </div>
+              <div class="col-lg-3 col-sm-3"></div>
+            </div>
+
+
             <!-- <li><a href="/posts/<%= posts[i].title %>"><%= posts[i].title %></a></li> -->
             <% } %>
         <!-- </ul> -->
         <% } else { %>
-          <div class="row center-push">
+          <div class="row center-push-empty">
             <div class="col-lg-3 col-sm-3"></div>
             <div class="col-lg-6 col-sm-6">
               <p class="medium-p">Oops! We didn't find any posts here.</p>
-              <button class="btn btn-large">Create a post</button>
+              <a href="/new"><button class="btn btn-large">Create a post</button></a>
               <!-- <p class="medium-p">Would you like to <a href="#">create a post</a>?</p> -->
             </div>
             <div class="col-lg-3 col-sm-3"></div>

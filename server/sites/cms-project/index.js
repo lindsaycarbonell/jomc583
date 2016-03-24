@@ -18,10 +18,14 @@ app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
-app.get('/', post.homeList); //show home page
-app.get('/posts/:id', post.innerShow);
+app.get('/', post.list);
+app.get('/posts/:id', post.show);
 
+app.get('/edit', post.showEdit);
 app.get('/posts/delete/:id', post.remove);
+
+app.get('/new', post.createForm);
+app.post('/', post.create);
 
 // app.get('/users', user.list); //list page
 //

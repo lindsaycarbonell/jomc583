@@ -55,6 +55,14 @@ p{
   line-height:24pt;
 }
 
+a{
+  color:#ECA87B;
+}
+a:hover{
+  color:#EDC9A8;
+  text-decoration: none;
+}
+
 .medium-p{
   font-size:13.5pt;
 }
@@ -70,7 +78,12 @@ p{
 }
 
 .center-push{
-  margin-top:10vw;
+  margin-top:50px;
+  text-align:center;
+}
+
+.center-push-empty{
+  margin-top:50px;
   text-align:center;
 }
 
@@ -88,14 +101,33 @@ p{
   font-style:bold;
 }
 
+.inner-title{
+  /*text-align:center;*/
+  line-height:24pt;
+  font-size:30pt;
+  font-weight:bold;
+}
+
+.slash{
+  font-size:14.5pt;
+}
+
 .meta-author{
-  font-size:13pt;
-  font-style:italic;
+  font-size:12pt;
+  text-transform:uppercase;
+  line-height: 24pt;
+}
+
+.meta-author::before{
+  content:'By ';
+  text-transform: none;
 }
 
 .meta-excerpt{
   font-size:11pt;
 }
+
+
 
 /*menu*/
 .navbar-nav>li, .navbar-nav{
@@ -104,7 +136,6 @@ p{
 .navbar-nav>li>a{
   font-size:15pt;
   color: #000;
-  /*font-weight:bold;*/
 }
 .nav-center{
   text-align:center;

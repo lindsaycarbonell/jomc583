@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <% include ../templates/header %>
-    <body>
 
+<body>
 
     <div id="main-container" class="container max-width">
 
         <div class="row">
           <div class="col-lg-5 col-sm-5"></div>
           <div class="col-lg-2 col-sm-2">
-            <img src="../logo_fox.png"  style="width:80px;line-height:12pt;"/>
+            <img src="logo_fox.png"  style="width:80px;line-height:12pt;"/>
           </div>
           <div class="col-lg-5 col-sm-5"></div>
         </div>
@@ -28,14 +28,38 @@
           </div>
         </nav>
 
-              <h4 class="inner-title"><%= post.title %></h4>
-              <a class="update-button" href="/edit">Edit this post</a>
-              <span class="slash"> | </span>
-              <a class="delete-button" href="/posts/delete/<%= post._id %>">Delete this post</a>
+        <h3>New Post</h3>
 
-              <h5 class="meta-author"><%= post.author %></h5>
-              <p class="meta-excerpt"><%= post.content %></p>
-      </div>
+        <form action="/" method="POST">
 
+            <p>
+            <label>Title</label>
+            <input type="text" id="title" name="title" value="" />
+            </p>
+
+            <p>
+            <label>Author</label>
+            <input type="text" id="author" name="author" value="" />
+            </p>
+
+            <p>
+            <label>Category</label>
+            <input type="text" id="category" name="category" value="" />
+            </p>
+
+            <p>
+            <label>Tags</label>
+            <input type="text" id="tags" name="tags" value="" />
+            </p>
+
+            <p>
+            <label>Thumbnail</label>
+            <input type="text" id="thumbnail" name="thumbnail" value="" />
+            </p>
+
+            <button>Create</button>
+
+        </form>
+</div><!--/#main-container-->
     </body>
 </html>
