@@ -4,62 +4,50 @@
 
 <body>
 
-    <div id="main-container" class="container max-width">
+  <% include ../templates/nav %>
 
-        <div class="row">
-          <div class="col-lg-5 col-sm-5"></div>
-          <div class="col-lg-2 col-sm-2">
-            <img src="logo_fox.png"  style="width:80px;line-height:12pt;"/>
-          </div>
-          <div class="col-lg-5 col-sm-5"></div>
-        </div>
+        <!-- <h3 class="form-header"><i class="fa fa-pencil-square-o"></i> New Post</h3> -->
 
-        <h3>Velvet Fox Interiors</h3>
-        <!--https://dribbble.com/shots/1226383-Velvet-Fox-Logo-Concept-->
-
-        <nav class="navbar" style="margin-top:24pt;">
-          <div class="container-fluid">
-              <ul class="nav navbar-nav nav-center">
-                <li class="inline-block"><a href="/">Home</a></li>
-                <li class="inline-block"><a href="#">About</a></li>
-                <li class="inline-block"><a href="#">Our Work</a></li>
-                <li class="inline-block"><a href="#">Shop</a></li>
-              </ul>
-          </div>
-        </nav>
-
-        <h3>New Post</h3>
+        <hr>
 
         <form action="/" method="POST">
 
-            <p>
-            <label>Title</label>
-            <input type="text" id="title" name="title" value="" />
-            </p>
+          <div class="row form-row">
+            <input class="form-control" type="text" id="title" name="title" value="Title" />
+          </div>
 
-            <p>
-            <label>Author</label>
-            <input type="text" id="author" name="author" value="" />
-            </p>
+          <div class="row form-row">
+            <input class="form-control" type="text" id="author" name="author" value="Author" />
+          </div>
 
-            <p>
-            <label>Category</label>
-            <input type="text" id="category" name="category" value="" />
-            </p>
+          <div class="row form-row">
+            <input class="form-control" type="text" id="content" name="content" value="content" />
+          </div>
 
-            <p>
-            <label>Tags</label>
-            <input type="text" id="tags" name="tags" value="" />
-            </p>
+          <div class="row form-row">
+            <input class="form-control" type="text" id="category" name="category" value="category" />
+          </div>
 
-            <p>
-            <label>Thumbnail</label>
-            <input type="text" id="thumbnail" name="thumbnail" value="" />
-            </p>
+          <div class="row form-row">
+            <input class="form-control tokenfield" type="text" id="tags" name="tags" value="tags" />
+          </div>
 
-            <button>Create</button>
+          <div class="row form-row">
+            <input class="form-control" type="text" id="thumbnail" name="thumbnail" value="image url" />
+          </div>
 
+          <div class="row center-push-empty">
+            <div class="col-lg-3 col-sm-3"></div>
+            <div class="col-lg-6 col-sm-6">
+              <a href="/new"><button class="btn btn-large">Create Post</button></a>
+            </div>
+            <div class="col-lg-3 col-sm-3"></div>
+            </div>
         </form>
 </div><!--/#main-container-->
     </body>
+
+    <script>
+    $('.tokenfield').tokenfield()
+    </script>
 </html>

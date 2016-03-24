@@ -25,31 +25,39 @@ exports.show= function(req, res){
 };
 
 exports.showEdit = function(req, res){
-  res.render('inner/update');
+  var collection = db.get().collection('posts');
+
+  console.log(req.params.id);
+
+  collection.find({"_id": ObjectID(req.params.id)}).toArray(function(err, results){
+    res.render('inner/update', {post: results[0]});
+  });
+
 }
 
 
 exports.update = function(req, res){
-  res.render('inner/update');
+  // res.render('inner/update');
 
-  // var inputDate = new Date(myDate.toISOString());
-  // var collection = db.get().collection('posts');
-  //
-  // collection.updateOne(
-  //   {"_id" : ObjectID(req.params.id)},
-  //   {
-  //     $set: {
-  //       title: req.body.title,
-  //       author: req.body.author,
-  //       category: req.body.category,
-  //       tags: req.body.tags,
-  //       date: inputDate,
-  //       thumbnail: req.body.thumbnail
-  //     }
-  //   }
-  // );
-  //
-  // res.redirect('/posts/:id');
+  var inputDate = new Date(myDate.toISOString());
+  var collection = db.get().collection('posts');
+
+  collection.updateOne(
+    {"_id" : ObjectID(req.params.id)},
+    {
+      $set: {
+        title: req.body.title,
+        author: req.body.author,
+        content: req.body.content,
+        category: req.body.category,
+        tags: req.body.tags,
+        date: inputDate,
+        thumbnail: req.body.thumbnail
+      }
+    }
+  );
+
+  res.redirect('/posts/:id');
 
 };
 
@@ -66,6 +74,7 @@ exports.create = function(req, res) {
   collection.insert({
     title: req.body.title,
     author: req.body.author,
+    content: req.body.content,
     category: req.body.category,
     tags: req.body.tags,
     date: inputDate,

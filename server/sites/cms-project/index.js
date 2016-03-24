@@ -21,7 +21,8 @@ app.set('view engine', 'ejs');
 app.get('/', post.list);
 app.get('/posts/:id', post.show);
 
-app.get('/edit', post.showEdit);
+app.get('/edit/:id', post.showEdit);
+app.post('/posts/:id', post.update);
 app.get('/posts/delete/:id', post.remove);
 
 app.get('/new', post.createForm);

@@ -3,52 +3,42 @@
   <% include ../templates/header %>
     <body>
 
-    <div id="main-container" class="container max-width">
+      <% include ../templates/nav %>
 
-        <div class="row">
-          <div class="col-lg-5 col-sm-5"></div>
-          <div class="col-lg-2 col-sm-2">
-            <img src="logo_fox.png"  style="width:80px;line-height:12pt;"/>
-          </div>
-          <div class="col-lg-5 col-sm-5"></div>
+      <!-- <div class="row center-push">
+        <div class="col-lg-3 col-sm-3"></div>
+        <div class="col-lg-6 col-sm-6">
+          <a href="/new"><button class="btn btn-large" style="float:right;">Create a post</button></a>
         </div>
-
-        <h3>Velvet Fox Interiors</h3>
-        <!--https://dribbble.com/shots/1226383-Velvet-Fox-Logo-Concept-->
-
-        <nav class="navbar" style="margin-top:24pt;">
-          <div class="container-fluid">
-              <ul class="nav navbar-nav nav-center">
-                <li class="inline-block"><a href="/">Home</a></li>
-                <li class="inline-block"><a href="#">About</a></li>
-                <li class="inline-block"><a href="#">Our Work</a></li>
-                <li class="inline-block"><a href="#">Shop</a></li>
-              </ul>
-          </div>
-        </nav>
-
-
+        <div class="col-lg-3 col-sm-3"></div>
+      </div> -->
 
 
         <% if (posts.length) { %>
         <!-- <ul> -->
             <% for (var i in posts) { %>
+              <hr>
             <div class="post-box">
-              <img src="logo_fox.png" style="display:inline-block;"/>
-              <a href="/posts/<%= posts[i]._id %>"><h4 class="meta-title"><%= posts[i].title %></h4></a>
-              <h5 class="meta-author">by <%= posts[i].author %></h5>
-              <p class="meta-excerpt"><%= posts[i].content %></p>
-            </div>
-
-            <div class="row center-push">
-              <div class="col-lg-3 col-sm-3"></div>
-              <div class="col-lg-6 col-sm-6">
-                <a href="/new"><button class="btn btn-large">Create a post</button></a>
-                <!-- <p class="medium-p">Would you like to <a href="#">create a post</a>?</p> -->
+              <div class="thumb-box">
+                <img src="<%= posts[i].thumbnail %>" class="post-thumb" />
               </div>
-              <div class="col-lg-3 col-sm-3"></div>
+              <a href="/posts/<%= posts[i]._id %>"><h4 class="meta-title"><%= posts[i].title %></h4></a>
+              <div class="row rmv-marg-left">
+
+                  <h5 class="meta-author"><%= posts[i].author %></h5>
+
+              </div>
+
+
+              <p class="meta-content"><%= posts[i].content %></p>
+              <span class="meta-bottom">
+                <i class="fa fa-clock-o"></i> <%= posts[i].date %>
+                <span class="bottom-tagged"><i class="fa fa-tag"></i> Tagged in <%= posts[i].tags %></span>
+              </span>
+
             </div>
 
+            <hr style="margin-top:80px;">
 
             <!-- <li><a href="/posts/<%= posts[i].title %>"><%= posts[i].title %></a></li> -->
             <% } %>
@@ -59,10 +49,10 @@
             <div class="col-lg-6 col-sm-6">
               <p class="medium-p">Oops! We didn't find any posts here.</p>
               <a href="/new"><button class="btn btn-large">Create a post</button></a>
-              <!-- <p class="medium-p">Would you like to <a href="#">create a post</a>?</p> -->
             </div>
             <div class="col-lg-3 col-sm-3"></div>
             </div>
+
         <% } %>
 
     </div><!--#main-container-->

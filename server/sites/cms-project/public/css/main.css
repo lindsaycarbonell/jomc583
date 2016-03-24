@@ -38,7 +38,7 @@ body{
 
 #main-container {
   background-color:#FFFEFE;
-  height: 100vh;
+  min-height: 100vh;
   padding:24pt;
 }
 
@@ -51,7 +51,8 @@ h3{
 
 p{
   font-family:pt-sans;
-  font-size:11pt;
+  text-align:left;
+  font-size:12pt;
   line-height:24pt;
 }
 
@@ -61,10 +62,6 @@ a{
 a:hover{
   color:#EDC9A8;
   text-decoration: none;
-}
-
-.medium-p{
-  font-size:13.5pt;
 }
 
 .btn.btn-large{
@@ -87,6 +84,10 @@ a:hover{
   text-align:center;
 }
 
+.rmv-marg-left{
+  margin-left:0;
+}
+
 .inline-block{
   display:inline-block!important;
 }
@@ -94,17 +95,28 @@ a:hover{
 .post-box{
   width:100%;
   text-align:center;
+  margin-top:40px;
+}
+
+.thumb-box{
+  overflow:hidden;
+}
+
+.post-thumb{
+  display:inline-block;
+  width:300px;
 }
 
 .meta-title{
-  font-size:25pt;
+  font-size:24pt;
+  text-align:left;
   font-style:bold;
 }
 
 .inner-title{
   /*text-align:center;*/
   line-height:24pt;
-  font-size:30pt;
+  font-size:48pt;
   font-weight:bold;
 }
 
@@ -114,8 +126,10 @@ a:hover{
 
 .meta-author{
   font-size:12pt;
+  text-align:left;
   text-transform:uppercase;
   line-height: 24pt;
+
 }
 
 .meta-author::before{
@@ -123,11 +137,65 @@ a:hover{
   text-transform: none;
 }
 
-.meta-excerpt{
-  font-size:11pt;
+.meta-content{
+  font-size:12pt;
+  line-height:24pt;
 }
 
+.meta-bottom{
+  font-size:12pt;
+  line-height:24pt;
+  float:left;
+  color:#AAAAAA;
+}
 
+.bottom-tagged{
+  margin-left:5px;
+}
+
+.admin-bar{
+  -webkit-box-shadow: 0px 4px 5px -2px rgba(26,26,26,1);
+  -moz-box-shadow: 0px 4px 5px -2px rgba(26,26,26,1);
+  box-shadow: 0px 4px 5px -2px rgba(26,26,26,1);
+}
+
+.form-header{
+  font-family:pt-sans;
+  font-size:36pt;
+}
+
+.form-row{
+  margin-bottom:12pt;
+  font-size:12pt;
+}
+
+.form-control{
+  border-bottom:2px solid #ECA87B;
+  border-top:0;
+  border-right:0;
+  border-left:0;
+  border-radius:0;
+  box-shadow:none;
+}
+
+.form-control:focus{
+  font-size:150%;
+  border-bottom:2px solid #ECA87B;
+  border-top:0;
+  border-right:0;
+  border-left:0;
+  border-radius:0;
+  box-shadow:none;}
+
+.form-control[name = title]{
+  font-size: 36pt;
+  height: 55pt;
+  text-align: center;
+}
+
+.form-control[name = content]{
+   padding:10px 15px 200px 15px;
+}
 
 /*menu*/
 .navbar-nav>li, .navbar-nav{
@@ -135,6 +203,7 @@ a:hover{
 }
 .navbar-nav>li>a{
   font-size:15pt;
+  line-height:24pt;
   color: #000;
 }
 .nav-center{
@@ -164,4 +233,9 @@ a:hover{
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
+}
+
+.reveal .fa {
+  font-family: 'FontAwesome';
+  font-style: normal;
 }

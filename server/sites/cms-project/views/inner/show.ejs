@@ -4,37 +4,15 @@
     <body>
 
 
-    <div id="main-container" class="container max-width">
-
-        <div class="row">
-          <div class="col-lg-5 col-sm-5"></div>
-          <div class="col-lg-2 col-sm-2">
-            <img src="../logo_fox.png"  style="width:80px;line-height:12pt;"/>
-          </div>
-          <div class="col-lg-5 col-sm-5"></div>
-        </div>
-
-        <h3>Velvet Fox Interiors</h3>
-        <!--https://dribbble.com/shots/1226383-Velvet-Fox-Logo-Concept-->
-
-        <nav class="navbar" style="margin-top:24pt;">
-          <div class="container-fluid">
-              <ul class="nav navbar-nav nav-center">
-                <li class="inline-block"><a href="/">Home</a></li>
-                <li class="inline-block"><a href="#">About</a></li>
-                <li class="inline-block"><a href="#">Our Work</a></li>
-                <li class="inline-block"><a href="#">Shop</a></li>
-              </ul>
-          </div>
-        </nav>
+      <% include ../templates/nav %>
 
               <h4 class="inner-title"><%= post.title %></h4>
-              <a class="update-button" href="/edit">Edit this post</a>
+              <a class="update-button" href="/edit/<%= post._id %>">Edit this post</a>
               <span class="slash"> | </span>
               <a class="delete-button" href="/posts/delete/<%= post._id %>">Delete this post</a>
 
               <h5 class="meta-author"><%= post.author %></h5>
-              <p class="meta-excerpt"><%= post.content %></p>
+              <p class="meta-content"><%= post.content %></p>
       </div>
 
     </body>

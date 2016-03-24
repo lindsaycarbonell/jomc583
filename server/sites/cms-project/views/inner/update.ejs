@@ -2,31 +2,43 @@
 <html>
 <% include ../templates/header %>    <body>
 
-    <div id="main-container" class="container max-width">
+  <% include ../templates/nav %>
 
-        <div class="row">
-          <div class="col-lg-5 col-sm-5"></div>
-          <div class="col-lg-2 col-sm-2">
-            <img src="logo_fox.png"  style="width:80px;line-height:12pt;"/>
-          </div>
-          <div class="col-lg-5 col-sm-5"></div>
-        </div>
+  <form action="/posts/<%= post._id %>" method="POST">
 
-        <h3>Velvet Fox Interiors</h3>
-        <!--https://dribbble.com/shots/1226383-Velvet-Fox-Logo-Concept-->
+      <p>
+      <label>Post Title</label>
+      <input type="text" id="title" name="title" value="<%= post.title %>" />
+      </p>
 
-        <nav class="navbar" style="margin-top:24pt;">
-          <div class="container-fluid">
-              <ul class="nav navbar-nav nav-center">
-                <li class="inline-block"><a href="/">Home</a></li>
-                <li class="inline-block"><a href="#">About</a></li>
-                <li class="inline-block"><a href="#">Our Work</a></li>
-                <li class="inline-block"><a href="#">Shop</a></li>
-              </ul>
-          </div>
-        </nav>
+      <p>
+      <label>Author</label>
+      <input type="text" id="author" name="author" value="<%= post.author %>" />
+      </p>
 
+      <p>
+      <label>Content</label>
+      <input class="form-control" type="text" id="content" name="content" value="<%= post.content %>" />
+      </p>
 
+      <p>
+      <label>Category</label>
+      <input type="text" id="category" name="category" value="<%= post.category %>" />
+      </p>
+
+      <p>
+      <label>Tags</label>
+      <input type="text" id="tags" name="tags" value="<%= post.tags %>" />
+      </p>
+
+      <p>
+      <label>Thumbnail</label>
+      <input type="text" id="thumbnail" name="thumbnail" value="<%= post.thumbnail %>" />
+      </p>
+
+      <button>Update</button>
+
+  </form>
 
 
     </div><!--#main-container-->
