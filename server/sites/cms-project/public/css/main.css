@@ -108,16 +108,22 @@ a:hover{
 }
 
 .meta-title{
-  font-size:24pt;
+  font-size:36pt;
+  line-height:48pt;
   text-align:left;
   font-style:bold;
 }
 
 .inner-title{
   /*text-align:center;*/
-  line-height:24pt;
-  font-size:48pt;
+  line-height:48pt;
+  font-size:36pt;
   font-weight:bold;
+}
+
+.inner-content{
+  font-size:10pt;
+
 }
 
 .slash{
@@ -125,7 +131,7 @@ a:hover{
 }
 
 .meta-author{
-  font-size:12pt;
+  font-size:10pt;
   text-align:left;
   text-transform:uppercase;
   line-height: 24pt;
