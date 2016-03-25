@@ -135,7 +135,7 @@ textarea{
 }
 
 .inner-title{
-  /*text-align:center;*/
+  text-align:left;
   line-height:48pt;
   font-size:36pt;
   font-weight:bold;
