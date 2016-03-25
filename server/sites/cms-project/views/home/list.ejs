@@ -22,6 +22,7 @@
               <div class="thumb-box">
                 <img src="<%= posts[i].thumbnail %>" class="post-thumb" />
               </div>
+
               <a href="/posts/<%= posts[i]._id %>"><h4 class="meta-title"><%= posts[i].title %></h4></a>
               <div class="row rmv-marg-left">
 
@@ -33,7 +34,10 @@
               <p class="meta-content"><%= posts[i].content %></p>
               <span class="meta-bottom">
                 <i class="fa fa-clock-o"></i> <%= posts[i].date %>
-                <span class="bottom-tagged"><i class="fa fa-tag"></i> Tagged in <%= posts[i].tags %></span>
+                <span class="bottom-tagged"><i class="fa fa-file-text-o"></i>
+categorized in <%= posts[i].category %></span>
+
+                <span class="bottom-tagged"><i class="fa fa-tag"></i> tagged in <%= posts[i].tags %></span>
               </span>
 
             </div>
