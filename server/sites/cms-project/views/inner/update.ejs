@@ -1,46 +1,75 @@
 <!DOCTYPE html>
 <html>
-<% include ../templates/header %>    <body>
+<% include ../templates/header %>
 
-  <% include ../templates/nav %>
-
-  <form action="/posts/<%= post._id %>" method="POST">
-
-      <p>
-      <label>Post Title</label>
-      <input type="text" id="title" name="title" value="<%= post.title %>" />
-      </p>
-
-      <p>
-      <label>Author</label>
-      <input type="text" id="author" name="author" value="<%= post.author %>" />
-      </p>
-
-      <p>
-      <label>Content</label>
-      <input class="form-control" type="text" id="content" name="content" value="<%= post.content %>" />
-      </p>
-
-      <p>
-      <label>Category</label>
-      <input type="text" id="category" name="category" value="<%= post.category %>" />
-      </p>
-
-      <p>
-      <label>Tags</label>
-      <input type="text" id="tags" name="tags" value="<%= post.tags %>" />
-      </p>
-
-      <p>
-      <label>Thumbnail</label>
-      <input type="text" id="thumbnail" name="thumbnail" value="<%= post.thumbnail %>" />
-      </p>
-
-      <button>Update</button>
-
-  </form>
+<body>
 
 
-    </div><!--#main-container-->
-    </body>
-</html>
+  <body>
+
+    <% include ../templates/nav %>
+
+          <!-- <h3 class="form-header"><i class="fa fa-pencil-square-o"></i> New Post</h3> -->
+
+          <hr>
+
+          <form action="/posts/<%= post._id %>" method="POST">
+
+            <div class="row form-row">
+              <textarea onClick="this.select();" class="form-control" type="text" id="title" name="title" placeholder=""><%= post.title %></textarea>
+            </div>
+
+            <div class="row form-row">
+              <label>author</label>
+              <input class="form-control" type="text" id="author" name="author" value="<%= post.author %>" />
+            </div>
+
+            <div class="row form-row">
+              <label>content</label>
+              <textarea class="form-control" type="text" id="content" name="content"><%= post.content %></textarea>
+            </div>
+
+            <div class="row form-row">
+              <label>category</label>
+              <select class="form-control" type="text" id="category" name="category" value="<%= post.category %>">
+                <option>Category 1</option>
+                <option>Category 2</option>
+                <option>Category 3</option>
+              </select>
+            </div>
+
+            <div class="row form-row">
+              <label>tags</label>
+              <input id="tokenfield" class="tokenfield form-control" type="text" id="tags" name="tags" value="<%= post.tags %>" />
+            </div>
+
+            <div class="row form-row">
+              <label>image URL</label>
+              <input class="form-control" type="text" id="thumbnail" name="thumbnail" value="<%= post.thumbnail %>" />
+            </div>
+
+            <div class="row center-push-empty">
+              <div class="col-lg-3 col-sm-3"></div>
+              <div class="col-lg-6 col-sm-6">
+                <a href="/new"><button class="btn btn-large">Create Post</button></a>
+              </div>
+              <div class="col-lg-3 col-sm-3"></div>
+              </div>
+        </form>
+
+  </div><!--/#main-container-->
+      </body>
+
+      <script>
+      $('#tokenfield').tokenfield({
+        autocomplete: {
+          source: [],
+          delay: 100
+        },
+        showAutocompleteOnFocus: true
+      });
+
+
+
+      </script>
+  </html>

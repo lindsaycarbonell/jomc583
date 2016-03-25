@@ -15,7 +15,9 @@ exports.list = function(req, res) {
   });
 };
 
-exports.show= function(req, res){
+exports.show = function(req, res){
+  console.log("show: " + req.params.id);
+
   var collection = db.get().collection('posts');
   var cursor = collection.find({"_id": ObjectID(req.params.id)});
 
@@ -43,9 +45,12 @@ exports.update = function(req, res){
   // res.render('inner/update');
 
   var collection = db.get().collection('posts');
+  var inputDate = new Date().toDateString().substring(4,15);
+
+  console.log(req.params.id);
 
   collection.updateOne(
-    {"_id" : ObjectID(req.params.id)},
+    {_id : ObjectID(req.params.id)},
     {
       $set: {
         title: req.body.title,
@@ -59,7 +64,7 @@ exports.update = function(req, res){
     }
   );
 
-  res.redirect('/posts/:id');
+  res.redirect('/posts/' + req.params.id);
 
 };
 
@@ -71,7 +76,8 @@ exports.createForm = function(req, res){
 
 exports.create = function(req, res) {
   var collection = db.get().collection('posts');
-  var inputDate = "04.01.2016";
+  var inputDate = new Date().toDateString().substring(4,15);
+
 
   collection.insert({
     title: req.body.title,

@@ -64,6 +64,26 @@ a:hover{
   text-decoration: none;
 }
 
+textarea{
+  height:100%!important;
+}
+
+::-webkit-input-placeholder {
+   color: black;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: black;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: black;
+}
+
+:-ms-input-placeholder {
+   color: black;
+}
+
 .btn.btn-large{
   color:#FFFEFE;
   font-size:18pt;
@@ -251,4 +271,10 @@ a:hover{
 .reveal .fa {
   font-family: 'FontAwesome';
   font-style: normal;
+}
+
+@media (max-width: 600px){
+  .form-control[name = title]{
+      font-size:12pt;
+    }
 }
