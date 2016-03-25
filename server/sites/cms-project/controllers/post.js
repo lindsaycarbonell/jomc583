@@ -3,6 +3,9 @@ var ObjectID = require('mongodb').ObjectID;
 
 
 exports.list = function(req, res) {
+  // var inputDate = new Date(myDate.toISOString());
+  // console.log("inputDate: " + inputDate);
+
   var collection = db.get().collection('posts');
 
   collection.find({}).toArray(function(err, results){
@@ -39,7 +42,6 @@ exports.showEdit = function(req, res){
 exports.update = function(req, res){
   // res.render('inner/update');
 
-  var inputDate = new Date(myDate.toISOString());
   var collection = db.get().collection('posts');
 
   collection.updateOne(

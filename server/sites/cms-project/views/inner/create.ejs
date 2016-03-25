@@ -13,27 +13,36 @@
         <form action="/" method="POST">
 
           <div class="row form-row">
-            <input class="form-control" type="text" id="title" name="title" value="Title" />
+            <input onClick="this.select();" class="form-control" type="text" id="title" name="title" value="Title" />
           </div>
 
           <div class="row form-row">
-            <input class="form-control" type="text" id="author" name="author" value="Author" />
+            <label>author</label>
+            <input class="form-control" type="text" id="author" name="author" value="" />
           </div>
 
           <div class="row form-row">
-            <input class="form-control" type="text" id="content" name="content" value="content" />
+            <label>content</label>
+            <textarea class="form-control" type="text" id="content" name="content" value=""></textarea>
           </div>
 
           <div class="row form-row">
-            <input class="form-control" type="text" id="category" name="category" value="category" />
+            <label>category</label>
+            <select class="form-control" type="text" id="category" name="category" value="">
+              <option>Category 1</option>
+              <option>Category 2</option>
+              <option>Category 3</option>
+            </select>
           </div>
 
           <div class="row form-row">
-            <input class="form-control tokenfield" type="text" id="tags" name="tags" value="tags" />
+            <label>tags</label>
+            <input id="tokenfield" class="tokenfield form-control" type="text" id="tags" name="tags" value="" />
           </div>
 
           <div class="row form-row">
-            <input class="form-control" type="text" id="thumbnail" name="thumbnail" value="image url" />
+            <label>image URL</label>
+            <input class="form-control" type="text" id="thumbnail" name="thumbnail" value="" />
           </div>
 
           <div class="row center-push-empty">
@@ -48,6 +57,15 @@
     </body>
 
     <script>
-    $('.tokenfield').tokenfield()
+    $('#tokenfield').tokenfield({
+      autocomplete: {
+        source: [],
+        delay: 100
+      },
+      showAutocompleteOnFocus: true
+    });
+
+
+
     </script>
 </html>
